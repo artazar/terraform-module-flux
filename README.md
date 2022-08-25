@@ -1,4 +1,4 @@
-This is a Terraform module that installs [Flux CD](https://fluxcd.io/) into target Kubernetes cluster to manage all resources inside of it.
+This is a Terraform module that installs [Flux CD](https://fluxcd.io/) (version 1) into target Kubernetes cluster to manage all resources inside of it.
 
 The module takes Git user credentials and cluster name as parameters:
 
