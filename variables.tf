@@ -15,6 +15,12 @@ variable flux_chart_version {
   default     = "1.6.0"
 }
 
+variable flux_namespace {
+  description = "Flux CD kubernetes namespace"
+  type        = string
+  default     = "flux"
+}
+
 variable helm_operator_chart_version {
   description = "Helm Operator chart version"
   type        = string
