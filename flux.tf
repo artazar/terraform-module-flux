@@ -23,9 +23,9 @@ Example of usage:
 
 resource "kubernetes_namespace" "flux-ns" {
   metadata {
-    name = "flux"
+    name = var.flux_namespace
     labels = {
-      k8s-namespace = "flux"
+      k8s-namespace = var.flux_namespace
     }
   }
 }
@@ -34,7 +34,7 @@ resource "kubernetes_namespace" "flux-ns" {
 
 resource "kubernetes_secret" "flux-git-auth" {
   metadata {
-    namespace = "flux"
+    namespace = var.flux_namespace
     name      = "flux-git-auth"
   }
 
@@ -58,7 +58,7 @@ resource "helm_release" "flux" {
   repository   = "https://charts.fluxcd.io"
   chart        = "flux"
   version      = var.flux_chart_version
-  namespace    = "flux"
+  namespace    = var.flux_namespace
   reuse_values = "true"
 
   set {
@@ -118,7 +118,7 @@ resource "helm_release" "helm-operator" {
   repository   = "https://charts.fluxcd.io"
   chart        = "helm-operator"
   version      = var.helm_operator_chart_version
-  namespace    = "flux"
+  namespace    = var.flux_namespace
   reuse_values = "true"
 
   # Work with Helm v3 only

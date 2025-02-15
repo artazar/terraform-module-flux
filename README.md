@@ -48,6 +48,7 @@ Example of usage:
 | k8s\_cluster\_name             | Cluster repository name       | `string` |            | True     |
 | flux\_bot\_username            | Username for Flux CD Git user | `string` | `flux-bot` | False    |
 | flux\_chart\_version           | Flux CD chart version         | `string` | `1.6.0`    | False    |
+| flux\_namespace                | Flux CD namespace             | `string` | `flux`     | False    |
 | helm\_operator\_chart\_version | Helm Operator chart version   | `string` | `1.2.0`    | False    |
 
 ## Output Values
